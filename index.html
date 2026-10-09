@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'none'; form-action 'none'; base-uri 'none'" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="robots" content="noindex" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Seating" />
+  <meta name="theme-color" content="#ea580c" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADrUlEQVR42u3dsZLTMBRAUUdDCRWTen8LyqXik6hIyXelhUlFseVSMEMRI68jyZYsndtmpZXkO0/Pmejp9Ppymzbj1/PThC05X67bdX4qKwcbenKljByc6NKSXDlo0bEi6XLQontFUuSgxSCKBGYMQsKDC8zgR+62QosBt5jADCEkXQ5mDOtHYAY/UuRgxuB+BGbwo8yrLIYiCBuIPe7ADMQeemAGYo9ezoF1OYewIXiIHHgwcggbuNPg3T7/8vzjt3Uv/BQ/f9gpcmwaNphxrFX9J0M47hyw9doGZvBjSY6N9hRmHNePv0p4lUWlbQXkADkwmhy+GEUsJxU5UGNb2eH7XWy6zuGg48YOKxwOPXpmHP5thR8HXdXTz0/vLTSqRQ6QA+QAOQBygBwgB8gBcoAcIAfIAXKAHCAHQA6QA+QAOUAOtMUeNcE+fvn6aJPb92+xjxLKURT/oXbZMbQwozqRI8GMhVZphUrKljcpO4YWZlRHjjQzYm1zVqTUapYdQwszqiNHjhnzHvLXorUeWhiPhBTkADlADpAD5AA5QA6QA+QAyAFygBwgB8gBcoAc0zQt/g40oYf8X0221kML46kZOXL8mLfNWYtS61h2DC3MqOa2kuZHrFXaipRdx7JjaGFGMdQ+h4QU5EBB9jjx1t/5MCfeqq3j1Pb5MCfeaq5jrK0Tbzv7Edo0Y96DE2/7+yEhBTlADpAD5AA5QA6QA+QAOUAOgBwgB8gBcoAcGEaO/s6HOfHWih9tng9z4q2+Hy2fD3PiDZCQghwgB8gBcoAcIAfIAXKAHBgYlX1SSLhPeaGqoso+ZVq1UAcn7abtWCuVfcq0baEOTs4d7PO2KvuU6aGFOjg5Zsx7UNkH3lZADpADIAfIAXKAHCAHyAFygBwgB8gBcgDkQDNy9FcHJ+f29XkPKvv0Vgcnx495W5V9equDk+ZHrJXKPpBzgBwYBCfezKhe5HCXffszqiOHu+zbn1EdOdxl3/6MJKRIleN8uVoF/CcsXa4iB2wrIAfIgb3kkJNino2KHLCtIEcOOwvu9hSRA+u2FcEDdxqIHFiXkAoewoa3FSS9ygoewsZS5Cjlh7vs25/R8kMP6/9059G7y76uGZMTb2a0wOn15RYdwfOTnXjAVGNV5JCcjmzG29sKP4Y1Y1XOwY8xzVibkPJjQDPeSEilqMNqkfIqK4SMY8aU8D0HPwYx4+FtxRYziBa5clCkYy3KyEGRLrUoKQdLenJiKzm4cmgb7vgDUxYa9xDDgVoAAAAASUVORK5CYII=" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADrUlEQVR42u3dsZLTMBRAUUdDCRWTen8LyqXik6hIyXelhUlFseVSMEMRI68jyZYsndtmpZXkO0/Pmejp9Ppymzbj1/PThC05X67bdX4qKwcbenKljByc6NKSXDlo0bEi6XLQontFUuSgxSCKBGYMQsKDC8zgR+62QosBt5jADCEkXQ5mDOtHYAY/UuRgxuB+BGbwo8yrLIYiCBuIPe7ADMQeemAGYo9ezoF1OYewIXiIHHgwcggbuNPg3T7/8vzjt3Uv/BQ/f9gpcmwaNphxrFX9J0M47hyw9doGZvBjSY6N9hRmHNePv0p4lUWlbQXkADkwmhy+GEUsJxU5UGNb2eH7XWy6zuGg48YOKxwOPXpmHP5thR8HXdXTz0/vLTSqRQ6QA+QAOQBygBwgB8gBcoAcIAfIAXKAHCAHQA6QA+QAOUAOtMUeNcE+fvn6aJPb92+xjxLKURT/oXbZMbQwozqRI8GMhVZphUrKljcpO4YWZlRHjjQzYm1zVqTUapYdQwszqiNHjhnzHvLXorUeWhiPhBTkADlADpAD5AA5QA6QA+QAyAFygBwgB8gBcoAc0zQt/g40oYf8X0221kML46kZOXL8mLfNWYtS61h2DC3MqOa2kuZHrFXaipRdx7JjaGFGMdQ+h4QU5EBB9jjx1t/5MCfeqq3j1Pb5MCfeaq5jrK0Tbzv7Edo0Y96DE2/7+yEhBTlADpAD5AA5QA6QA+QAOUAOgBwgB8gBcoAcGEaO/s6HOfHWih9tng9z4q2+Hy2fD3PiDZCQghwgB8gBcoAcIAfIAXKAHBgYlX1SSLhPeaGqoso+ZVq1UAcn7abtWCuVfcq0baEOTs4d7PO2KvuU6aGFOjg5Zsx7UNkH3lZADpADIAfIAXKAHCAHyAFygBwgB8gBcgDkQDNy9FcHJ+f29XkPKvv0Vgcnx495W5V9equDk+ZHrJXKPpBzgBwYBCfezKhe5HCXffszqiOHu+zbn1EdOdxl3/6MJKRIleN8uVoF/CcsXa4iB2wrIAfIgb3kkJNino2KHLCtIEcOOwvu9hSRA+u2FcEDdxqIHFiXkAoewoa3FSS9ygoewsZS5Cjlh7vs25/R8kMP6/9059G7y76uGZMTb2a0wOn15RYdwfOTnXjAVGNV5JCcjmzG29sKP4Y1Y1XOwY8xzVibkPJjQDPeSEilqMNqkfIqK4SMY8aU8D0HPwYx4+FtxRYziBa5clCkYy3KyEGRLrUoKQdLenJiKzm4cmgb7vgDUxYa9xDDgVoAAAAASUVORK5CYII=" />
+  <title>Seating Chart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-tab="chart">
+  <header class="topbar no-print">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Seating Chart</h1>
+        <p class="tagline">Keeps your talkers apart</p>
+      </div>
+    </div>
+    <label class="class-switcher">
+      <span class="sr-only">Class</span>
+      <select id="classSelect" aria-label="Choose class"></select>
+    </label>
+  </header>
+
+  <nav class="tabs no-print" aria-label="Sections">
+    <button type="button" data-tab-btn="chart" class="tab active">Chart</button>
+    <button type="button" data-tab-btn="students" class="tab">Students <span id="tabCount" class="tab-count"></span></button>
+    <button type="button" data-tab-btn="setup" class="tab">Setup</button>
+  </nav>
+
+  <div id="sampleBanner" class="banner no-print" hidden>
+    These are <b>pretend sample names</b>. Tap <b>Paste names</b> to add your real class, or <b>Start fresh</b> in Setup.
+  </div>
+
+  <main class="layout no-print">
+    <!-- STUDENTS -->
+    <section class="panel students-panel" data-section="students">
+      <div class="panel-header">
+        <h2>Students</h2>
+        <div class="btn-row">
+          <button type="button" id="btnPaste" class="btn btn-primary">Paste names</button>
+          <button type="button" id="btnAddOne" class="btn">+ One</button>
+        </div>
+      </div>
+      <p class="hint">Tap a tag to turn it on or off. <b>Talker</b> = never next to another talker.</p>
+      <div class="tag-legend">
+        <span class="chip on talker">Talker</span>
+        <span class="chip on front">Front</span>
+        <span class="chip on quiet">Quiet</span>
+        <span class="chip on apart">Apart</span>
+        <span class="chip on lock">Lock seat</span>
+      </div>
+      <input type="search" id="rosterFilter" class="filter" placeholder="Find a student" aria-label="Find a student" />
+      <ul id="roster" class="roster"></ul>
+
+      <div class="subpanel">
+        <h3>Never sit together</h3>
+        <p class="hint">Pairs that should never be next to each other.</p>
+        <div class="pair-add">
+          <select id="pairA" aria-label="First student"></select>
+          <span>&amp;</span>
+          <select id="pairB" aria-label="Second student"></select>
+          <button type="button" id="btnAddPair" class="btn">Add</button>
+        </div>
+        <ul id="pairList" class="pair-list"></ul>
+      </div>
+    </section>
+
+    <!-- CHART -->
+    <section class="panel chart-panel" data-section="chart">
+      <div class="chart-toolbar">
+        <button type="button" id="btnArrange" class="btn btn-primary btn-big">Auto-arrange</button>
+        <button type="button" id="btnPrint" class="btn">Print / Save</button>
+        <button type="button" id="btnPresent" class="btn">Big view</button>
+        <span class="zoom">
+          <button type="button" id="btnZoomOut" class="btn btn-icon" aria-label="Zoom out">&minus;</button>
+          <button type="button" id="btnZoomIn" class="btn btn-icon" aria-label="Zoom in">+</button>
+        </span>
+      </div>
+      <p id="selectHint" class="select-hint" aria-live="polite">Tap a student, then another seat to swap them. On a computer you can also drag.</p>
+      <div id="roomWrap" class="room-wrap">
+        <div id="room" class="room" aria-label="Seating chart, front of room at top"></div>
+      </div>
+      <div class="legend">
+        <span><i class="dot talker"></i> Talker</span>
+        <span><i class="dot front"></i> Needs front</span>
+        <span><i class="dot quiet"></i> Quiet</span>
+        <span><i class="dot lock"></i> Locked</span>
+        <span><i class="sw bad"></i> Conflict</span>
+      </div>
+
+      <div class="subpanel conflicts">
+        <h3>Conflicts <span id="conflictCount" class="count-pill"></span></h3>
+        <ul id="conflictList" class="conflict-list"></ul>
+        <div id="unseatedBox" hidden>
+          <h3>Not seated yet</h3>
+          <p class="hint">Tap a name, then tap a seat.</p>
+          <div id="unseated" class="unseated"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETUP -->
+    <section class="panel setup-panel" data-section="setup">
+      <h2>Room setup</h2>
+      <label class="field">Desk layout
+        <select id="layoutType">
+          <option value="pods4">Tables of 4</option>
+          <option value="pods6">Tables of 6</option>
+          <option value="pairs">Pairs in rows</option>
+          <option value="rows">Single desks in rows</option>
+        </select>
+      </label>
+      <div class="field-row">
+        <label class="field">Seats
+          <input type="number" id="seatCount" min="4" max="48" step="1" inputmode="numeric" />
+        </label>
+        <label class="field">Across the room
+          <select id="acrossCount"></select>
+        </label>
+      </div>
+      <p class="hint">Front of the room (board) is always at the top. Changing the layout re-arranges your class.</p>
+
+      <h2>Classes</h2>
+      <div class="btn-row wrap">
+        <button type="button" id="btnNewClass" class="btn">+ New class</button>
+        <button type="button" id="btnRenameClass" class="btn">Rename</button>
+        <button type="button" id="btnDeleteClass" class="btn danger">Delete class</button>
+      </div>
+
+      <h2>Backup &amp; move</h2>
+      <p class="hint">Save a backup file, then open it on your other device with <b>Import</b>.</p>
+      <div class="btn-row wrap">
+        <button type="button" id="btnExport" class="btn">Export backup</button>
+        <button type="button" id="btnImport" class="btn">Import backup</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden />
+      </div>
+
+      <h2>Start over</h2>
+      <button type="button" id="btnFresh" class="btn danger">Start fresh (erase everything)</button>
+
+      <div class="privacy">
+        <h3>Privacy</h3>
+        <p>Your class list is saved <b>only on this device</b>, in this browser. Nothing is uploaded or sent anywhere, and the app works with no internet. Clearing your browser data erases it, so export a backup now and then.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast no-print" role="status" hidden></div>
+  <button type="button" id="btnExitPresent" class="btn exit-present no-print" hidden>Exit big view</button>
+
+  <!-- Paste names dialog -->
+  <dialog id="pasteDialog" class="dialog">
+    <form method="dialog" class="dialog-body">
+      <h2>Paste names</h2>
+      <p class="hint">One student per line. You can paste straight from a spreadsheet or list.</p>
+      <textarea id="pasteBox" rows="10" placeholder="First student&#10;Second student&#10;Third student" spellcheck="false" autocapitalize="words"></textarea>
+      <div class="radio-row">
+        <label><input type="radio" name="pasteMode" value="add" checked /> Add to class</label>
+        <label><input type="radio" name="pasteMode" value="replace" /> Replace whole list</label>
+      </div>
+      <div class="btn-row end">
+        <button type="button" class="btn" data-close>Cancel</button>
+        <button type="button" id="btnPasteGo" class="btn btn-primary">Add students</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Keep apart dialog -->
+  <dialog id="apartDialog" class="dialog">
+    <form method="dialog" class="dialog-body">
+      <h2>Never sit together</h2>
+      <p class="hint">Keep <b id="apartName"></b> away from:</p>
+      <input type="search" id="apartFilter" class="filter" placeholder="Find a student" aria-label="Find a student" />
+      <div id="apartList" class="apart-list"></div>
+      <div class="btn-row end">
+        <button type="button" class="btn btn-primary" data-close>Done</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Print view -->
+  <section id="printArea" class="print-area" aria-hidden="true">
+    <h1 id="printTitle"></h1>
+    <p id="printDate" class="print-date"></p>
+    <div id="printRoom" class="room print-room"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
